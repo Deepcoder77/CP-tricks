@@ -1,0 +1,44 @@
+#include<bits/stdc++.h>
+using ll = long long int;
+#define pb push_back
+#define vlg vector<ll>
+#define vll vector<pair<ll, ll>>
+#define f(n) for(ll i=0;i<(n);i++)
+#define fr(k, n) for(ll j=(k); j<(n); j++)
+#define lcm(a,b) (a*b)/__gcd(a,b)
+#define rev(n) reverse(n.begin(), n.end())
+using namespace std;
+int main(){
+ios_base::sync_with_stdio(false);
+cin.tie(NULL);
+    int t;
+    cin>>t;
+    while(t--){
+        int n;
+        cin>>n;
+        string s;
+        cin>>s;
+       set<char>se;
+       int g=0;
+      for(int i=0;i<n;i+=2){
+        se.insert(s[i]);
+      }
+      for(int i=1;i<n;i+=2){
+      
+      //By using below method we can directly check that the upcoming string element is present in set or not and apply our logic according to that;
+      //same syntax we use for map to find the already existance of upcoming element;
+      
+        if(se.count(s[i])!=0){
+            g++;
+            break;
+        }
+      }
+      if(g>0){
+        cout<<"NO"<<endl;
+      }
+      else{
+        cout<<"YES"<<endl;
+      }
+    }
+    return 0;
+}
